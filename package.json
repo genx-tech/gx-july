@@ -1,0 +1,165 @@
+{
+    "name": "@genx/july",
+    "version": "0.1.0",
+    "description": "Gen-X JavaScript Utility Library for both Node.js and browser",
+    "main": "lib/commonjs/index",
+    "module": "lib/module/index",
+    "source": "src/index",
+    "files": [
+        "src",
+        "lib",
+        "!**/__tests__",
+        "!**/__fixtures__",
+        "!**/__mocks__"
+    ],
+    "scripts": {
+        "doc": "jsdoc -c jsdoc.json -t ./node_modules/ink-docstrap/template -R README.md -d './docs' -r --verbose ./src",
+        "test": "BABEL_ENV=test mocha --recursive src/**/*.spec.js",
+        "cover": "nyc --reporter=html --reporter=text mocha --recursive src/**/*.spec.js",
+        "prettier": "prettier --write .",
+        "lint": "eslint \"**/*.js\"",
+        "bundle": "rollup --config",
+        "clean": "rm -rf lib && rm -rf dist",
+        "build": "bob build",
+        "release": "release-it"
+    },
+    "keywords": [
+        "javascript",
+        "utility"
+    ],
+    "repository": "https://github.com/genx-tech/gx-july",
+    "author": "Rockie Guo <rockie@kitmi.com.au> (https://github.com/rockie)",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/genx-tech/gx-july/issues"
+    },
+    "homepage": "https://github.com/genx-tech/gx-july#readme",
+    "publishConfig": {
+        "registry": "https://registry.npmjs.org/"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.12.10",
+        "@babel/core": "^7.12.10",
+        "@babel/preset-env": "^7.12.11",
+        "@babel/register": "^7.12.10",
+        "@commitlint/config-conventional": "^11.0.0",
+        "@react-native-community/eslint-config": "^2.0.0",
+        "@release-it/conventional-changelog": "^2.0.0",
+        "@rollup/plugin-babel": "^5.2.2",
+        "@rollup/plugin-node-resolve": "^11.1.0",
+        "commitlint": "^11.0.0",
+        "del-cli": "^3.0.1",
+        "eslint": "^7.2.0",
+        "eslint-config-prettier": "^7.0.0",
+        "eslint-plugin-prettier": "^3.1.3",
+        "husky": "^4.2.5",
+        "ink-docstrap": "^1.3.2",
+        "jsdoc": "^3.6.6",
+        "mocha": "^8.2.1",
+        "nyc": "^15.1.0",
+        "prettier": "^2.0.5",
+        "react-native-builder-bob": "^0.17.1",
+        "release-it": "^14.2.2",
+        "rollup": "^2.37.0",
+        "rollup-plugin-terser": "^7.0.2",
+        "core-js": "^3.8.3"
+    },
+    "peerDependencies": {},
+    "husky": {
+        "hooks": {
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+            "pre-commit": "npm run lint"
+        }
+    },
+    "commitlint": {
+        "extends": [
+            "@commitlint/config-conventional"
+        ]
+    },
+    "release-it": {
+        "git": {
+            "commitMessage": "chore: release ${version}",
+            "tagName": "v${version}"
+        },
+        "npm": {
+            "publish": true
+        },
+        "github": {
+            "release": true
+        },
+        "plugins": {
+            "@release-it/conventional-changelog": {
+                "preset": "angular"
+            }
+        }
+    },
+    "mocha": {
+        "require": [
+            "@babel/register",
+            "should"
+        ],
+        "enable-source-maps": true,
+        "timeout": 30000
+    },
+    "eslintConfig": {
+        "root": true,
+        "extends": "eslint:recommended",
+        "env": {
+            "shared-node-browser": true,
+            "commonjs": true
+        },
+        "parserOptions": {
+            "ecmaVersion": 12,
+            "sourceType": "module"
+        }
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "eslintIgnore": [
+        "/node_modules",
+        "/lib",
+        "/dist",
+        "/test",
+        "/patches",
+        "/docs",
+        "/**/__tests__",
+        "babel.config.js",
+        "rollup.config.js"
+    ],
+    "prettier": {
+        "quoteProps": "consistent",
+        "singleQuote": true,
+        "tabWidth": 4,
+        "trailingComma": "es5",
+        "useTabs": false
+    },
+    "dependencies": {},
+    "react-native-builder-bob": {
+        "source": "src",
+        "output": "lib",
+        "targets": [
+            [
+                "commonjs",
+                {
+                    "configFile": true
+                }
+            ],
+            [
+                "module",
+                {
+                    "configFile": true
+                }
+            ]
+        ]
+    }
+}

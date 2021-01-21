@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>@genx/july Index</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.cerulean.css">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top navbar-inverse">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">@genx/july</a>
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+        </button>
+	</div>
+	<div class="navbar-collapse collapse" id="topNavigation">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="global.html#insertBetween">insertBetween</a></li><li><a href="global.html#isPlainObject">isPlainObject</a></li><li><a href="global.html#remap">remap</a></li><li><a href="global.html#replaceAll">replaceAll</a></li><li><a href="global.html#unquote">unquote</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+        
+            <div class="col-sm-3 col-md-3">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        
+	</div>
+
+</div>
+</div>
+
+
+<div class="container" id="toc-content">
+<div class="row">
+
+	
+	<div class="col-md-8">
+	
+		<div id="main">
+			
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+
+
+
+
+
+    <section class="readme-section">
+        <article><h1>@genx/july</h1>
+<p>Gen-X High Performance JavaScript Utility Library for both Node.js and browser</p>
+<h2>Installation</h2>
+<pre class="prettyprint source lang-sh"><code>npm install @genx/july
+</code></pre>
+<h2>Usage</h2>
+<pre class="prettyprint source lang-js"><code>import { remap } from &quot;@genx/july&quot;;
+
+// ...
+const source = {
+    'key1': {
+        'key1_1': {
+            'key1_1_1': 20,
+            'key1_1_2': 'test2',
+            'key1_1_3': 30
+        }
+    },
+    'key2': true,
+    'key3': 30,
+    'key4': 'test',
+    'key5': [ 'a', 'b' ],
+};
+
+const remapped = remap(source, {
+    'key1': [
+        'tkey1',
+        {
+            'key1_1': ['key1_1', {
+                'key1_1_1': 'tkey1_1_1',
+                'key1_1_3': 'tkey1_1_3'
+            }]
+        }
+    ],
+    'key3': 'tkey3',
+    'key5': 'tkey5'    
+});
+
+mapped.should.be.eql({
+    tkey1: {
+        key1_1: {
+            tkey1_1_1: 20,
+            tkey1_1_3: 30
+        }
+    },
+    tkey3: 30,
+    tkey5: [ 'a', 'b' ]
+});
+</code></pre>
+<h2>High Benchmark Guidelines</h2>
+<ul>
+<li>Use spread operator instead of Array.concat and Array.push</li>
+</ul>
+<p>https://www.measurethat.net/Benchmarks/Show/11247/0/array-concat-vs-spread-operatorfgfgf</p>
+<ul>
+<li>For readonly traversing, use forEach and map instead of &quot;for&quot; and &quot;for .. of&quot;</li>
+</ul>
+<p>https://www.measurethat.net/Benchmarks/Show/11264/0/for-vs-foreach-vs-some-vs-every-vs-forof-vs-map</p>
+<ul>
+<li>For mutation traversing, use every instead of others</li>
+</ul>
+<p>https://www.measurethat.net/Benchmarks/Show/11265/0/for-vs-foreach-vs-some-vs-every-vs-forof-vs-map-with-mu</p>
+<ul>
+<li>Object lookup 2.5x faster than Map</li>
+</ul>
+<p>https://www.measurethat.net/Benchmarks/Show/11262/0/map-vs-objects</p>
+<ul>
+<li>Use fast-deep-equal for deep compare, 10x faster than lodash</li>
+</ul>
+<p>https://www.npmjs.com/package/fast-deep-equal</p>
+<h2>License</h2>
+<p>MIT</p></article>
+    </section>
+
+
+
+
+
+
+
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+		<div class="col-md-3">
+			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
+		</div>
+	
+
+</div>
+</div>
+
+
+    <div class="modal fade" id="searchResults">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Search results</h4>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div>
+
+
+<footer>
+
+
+	<span class="copyright">
+	Copyright (c) since 2018, Gen-X Tech Pty Ltd
+	</span>
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a>
+	
+	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+</span>
+</footer>
+
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/toc.js"></script>
+
+    <script type="text/javascript" src="scripts/fulltext-search-ui.js"></script>
+
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( ".tutorial-section pre, .readme-section pre, pre.prettyprint.source" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			lang = langClassMatch ? langClassMatch[1] : "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : true,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+
+	$.catchAnchorLinks( {
+        navbarOffset: 10
+	} );
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			return $( heading ).attr( "id" ) || ( prefix + i );
+		},
+		selectors   : "#toc-content h1,#toc-content h2,#toc-content h3,#toc-content h4",
+		showAndHide : false,
+		smoothScrolling: true
+	} );
+
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+
+    $( "table" ).each( function () {
+      var $this = $( this );
+      $this.addClass('table');
+    } );
+
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+
+<!--Google Analytics-->
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            SearcherDisplay.init();
+        });
+    </script>
+
+
+</body>
+</html>

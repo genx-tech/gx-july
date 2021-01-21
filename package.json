@@ -15,7 +15,7 @@
     "scripts": {
         "doc": "jsdoc -c jsdoc.json -t ./node_modules/ink-docstrap/template -R README.md -d './docs' -r --verbose ./src",
         "test": "BABEL_ENV=test mocha --recursive src/**/*.spec.js",
-        "cover": "nyc --reporter=html --reporter=text mocha --recursive src/**/*.spec.js",
+        "cover": "BABEL_ENV=test nyc --reporter=html --reporter=text mocha --recursive src/**/*.spec.js",
         "prettier": "prettier --write .",
         "lint": "eslint \"**/*.js\"",
         "bundle": "rollup --config",

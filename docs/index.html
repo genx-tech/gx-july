@@ -92,46 +92,49 @@
 <pre class="prettyprint source lang-sh"><code>npm install @genx/july
 </code></pre>
 <h2>Usage</h2>
-<pre class="prettyprint source lang-js"><code>import { remap } from &quot;@genx/july&quot;;
+<pre class="prettyprint source lang-js"><code>import { remap } from '@genx/july';
 
 // ...
 const source = {
-    'key1': {
-        'key1_1': {
-            'key1_1_1': 20,
-            'key1_1_2': 'test2',
-            'key1_1_3': 30
-        }
+    key1: {
+        key1_1: {
+            key1_1_1: 20,
+            key1_1_2: 'test2',
+            key1_1_3: 30,
+        },
     },
-    'key2': true,
-    'key3': 30,
-    'key4': 'test',
-    'key5': [ 'a', 'b' ],
+    key2: true,
+    key3: 30,
+    key4: 'test',
+    key5: ['a', 'b'],
 };
 
 const remapped = remap(source, {
-    'key1': [
+    key1: [
         'tkey1',
         {
-            'key1_1': ['key1_1', {
-                'key1_1_1': 'tkey1_1_1',
-                'key1_1_3': 'tkey1_1_3'
-            }]
-        }
+            key1_1: [
+                'key1_1',
+                {
+                    key1_1_1: 'tkey1_1_1',
+                    key1_1_3: 'tkey1_1_3',
+                },
+            ],
+        },
     ],
-    'key3': 'tkey3',
-    'key5': 'tkey5'    
+    key3: 'tkey3',
+    key5: 'tkey5',
 });
 
 mapped.should.be.eql({
     tkey1: {
         key1_1: {
             tkey1_1_1: 20,
-            tkey1_1_3: 30
-        }
+            tkey1_1_3: 30,
+        },
     },
     tkey3: 30,
-    tkey5: [ 'a', 'b' ]
+    tkey5: ['a', 'b'],
 });
 </code></pre>
 <h2>High Benchmark Guidelines</h2>

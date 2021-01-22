@@ -1,5 +1,13 @@
 import {identity} from '../function/callback'
-
+/**
+ * @param  {identity'} 'unit
+ * @param  {} function(
+ * @param  {} {it('identity.'
+ * @param  {} asyncfunction(
+ * @param  {} {constafter_identity1=identity(1
+ * @param  {} ;constafter_identity2=identity("1"
+ * @param  {1}} ;constafter_identity3=identity({"a"
+ */
 describe('unit:identity', function() {
     it('identity.',async function () {
 

@@ -17,3 +17,4 @@ export const dropIfEndsWith = (str, ending) =>
  */
 export const replaceAll = (str, search, replacement) =>
     str.split(search).join(replacement);
+

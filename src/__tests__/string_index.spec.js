@@ -34,6 +34,7 @@ describe.only('string index', () => {
         try {
             const drop_if_ends_with_d = dropIfEndsWith(d,"");
         } catch (error) {
+            assert(error instanceof assert.AssertionError);
             done(error);
         }
         

@@ -1,11 +1,7 @@
 /**
- * @param  {} base
- * @param  {} extraPath
- * @param  {} {returnbase?extraPath?dropIfEndsWith(base
- * @param  {} '/'
- * @param  {} +ensureStartsWith(extraPath
- * @param  {} '/'
- * @returns extraPath
+ * Join base url and the extra url path
+ * @param  {String} base
+ * @param  {String} extraPath
  */
 import { dropIfEndsWith, ensureStartsWith } from './index';
 

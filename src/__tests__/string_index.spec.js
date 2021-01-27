@@ -1,7 +1,7 @@
 import { ensureEndsWith, ensureStartsWith, dropIfEndsWith, replaceAll} from "../string/index";
 
 
-describe.only('string index', () => {
+describe('string index', () => {
     it('Replace all occurance of "search" with "replacement" in a string.', () => {
         const a = "abc";
         const b = "a";

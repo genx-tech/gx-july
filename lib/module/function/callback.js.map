@@ -1,0 +1,1 @@
+{"version":3,"sources":["callback.js"],"names":["identity","value"],"mappings":";;;;;;;AAAO,IAAMA,QAAQ,GAAG,SAAXA,QAAW,CAACC,KAAD;AAAA,SAAWA,KAAX;AAAA,CAAjB","sourcesContent":["export const identity = (value) => value;\n"]}

@@ -1,1 +1,1 @@
-{"version":3,"sources":["callback.js"],"names":["identity","value"],"mappings":";;;;;;;AAAO,IAAMA,QAAQ,GAAG,SAAXA,QAAW,CAACC,KAAD;AAAA,SAAWA,KAAX;AAAA,CAAjB","sourcesContent":["export const identity = (value) => value;\n"]}
+{"version":3,"sources":["callback.js"],"names":["identity","value"],"mappings":";;;;;;;AAAA;AACA;AACA;AACA;AACO,IAAMA,QAAQ,GAAG,SAAXA,QAAW,CAACC,KAAD;AAAA,SAAWA,KAAX;AAAA,CAAjB","sourcesContent":["/**\n * Return the variable itself\n * @param  {*} value\n */\nexport const identity = (value) => value;\n"]}

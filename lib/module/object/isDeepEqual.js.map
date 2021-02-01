@@ -1,1 +1,0 @@
-{"version":3,"sources":["isDeepEqual.js"],"names":[],"mappings":";;;;;;;;;;;;AAGA","sourcesContent":["//10x performance over lodash.isEqual\n//To support ES6 Maps, Sets and Typed arrays equality use:\n//from 'fast-deep-equal/es6/react'\nexport { default } from 'fast-deep-equal/react';\n"]}

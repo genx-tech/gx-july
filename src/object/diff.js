@@ -1,18 +1,18 @@
 import isEqual from 'lodash/isEqual';
 /**
  * Deep diff between two object
- * @param  {Object} object - Object compared
  * @param  {Object} base - Object to be compared
- * @return {Object} Return the key-value pair from object 2 which of the value is different from object 1 with the same key
+ * @param  {Object} object - Object compared 
+ * @return {Object} Return the key-value pair from object which of the value is different from base with the same key
  */
-function difference(object, base) {
+function difference(base, object) {
     return Object.entries(object).reduce((re, [k, v]) => {
-        const v2 = base[k];
+        const vb = base[k];
 
-        if (!isEqual(v, base[k])) {
+        if (!isEqual(vb, v)) {
             re[k] =
-                typeof v === 'object' && typeof v2 === 'object'
-                    ? difference(v, v2)
+                typeof v === 'object' && typeof vb === 'object'
+                    ? difference(vb, v)
                     : v;
         }
 

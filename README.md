@@ -75,10 +75,6 @@ https://www.measurethat.net/Benchmarks/Show/11265/0/for-vs-foreach-vs-some-vs-ev
 
 https://www.measurethat.net/Benchmarks/Show/11262/0/map-vs-objects
 
--   Use fast-deep-equal for deep compare, 10x faster than lodash
-
-https://www.npmjs.com/package/fast-deep-equal
-
 ## License
 
 MIT

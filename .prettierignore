@@ -5,3 +5,5 @@
 /patches
 /docs
 /**/__tests__
+/coverage
+/.nyc_output

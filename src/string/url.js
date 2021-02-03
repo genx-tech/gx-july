@@ -5,7 +5,6 @@
  */
 import { dropIfEndsWith, ensureStartsWith } from './index';
 
-
 export function join(base, extraPath) {
     return base
         ? extraPath

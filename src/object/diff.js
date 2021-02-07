@@ -2,7 +2,7 @@ import isEqual from 'lodash/isEqual';
 /**
  * Deep diff between two object
  * @param  {Object} base - Object to be compared
- * @param  {Object} object - Object compared 
+ * @param  {Object} object - Object compared
  * @return {Object} Return the key-value pair from object which of the value is different from base with the same key
  */
 function difference(base, object) {

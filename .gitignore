@@ -60,3 +60,4 @@ android/keystores/debug.keystore
 dist/
 .nyc_output
 coverage
+allure-results

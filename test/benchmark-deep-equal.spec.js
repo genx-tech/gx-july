@@ -13,7 +13,7 @@ testSuite(
                 const testees = {
                     'lodash.isEqual': (data) => {
                         data.forEach((item) => {
-                            _.isEqual(item.value1, item.value2);
+                            _._isEqual(item.value1, item.value2);
                         });
                     },
                     'fast-deep-equal': (data) => {

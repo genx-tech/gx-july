@@ -1,3 +1,4 @@
+export * from './lang';
 export * from './array';
 export * from './object';
 export { default as remap } from './object/remap';

@@ -33,7 +33,7 @@
 			<li class="dropdown">
 				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="global.html#identity">identity</a></li><li><a href="global.html#insertBetween">insertBetween</a></li><li><a href="global.html#isPlainObject">isPlainObject</a></li><li><a href="global.html#remap">remap</a></li><li><a href="global.html#replaceAll">replaceAll</a></li><li><a href="global.html#unquote">unquote</a></li>
+					<li><a href="global.html#difference">difference</a></li><li><a href="global.html#identity">identity</a></li><li><a href="global.html#insertBetween">insertBetween</a></li><li><a href="global.html#isPlainObject">isPlainObject</a></li><li><a href="global.html#remap">remap</a></li><li><a href="global.html#replaceAll">replaceAll</a></li><li><a href="global.html#unquote">unquote</a></li>
 				</ul>
 			</li>
 			
@@ -139,25 +139,29 @@ mapped.should.be.eql({
 </code></pre>
 <h2>High Benchmark Guidelines</h2>
 <ul>
+<li>Object traversing, lodash.each &gt; for...in &gt; Object.entries.forEach</li>
+</ul>
+<p>https://www.measurethat.net/Benchmarks/Show/11499/0/lodash-each-vs-objectentriesforeach-vs-forin</p>
+<ul>
 <li>Use spread operator instead of Array.concat and Array.push</li>
 </ul>
-<p>https://www.measurethat.net/Benchmarks/Show/11247/0/array-concat-vs-spread-operatorfgfgf</p>
+<p>https://www.measurethat.net/Benchmarks/Show/11501/0/array-concat-vs-spread-operator-vs-push-many<br>
+https://www.measurethat.net/Benchmarks/Show/11500/1/array-concat-vs-spread-operator-vs-push-1</p>
 <ul>
 <li>For readonly traversing, use forEach and map instead of &quot;for&quot; and &quot;for .. of&quot;</li>
 </ul>
 <p>https://www.measurethat.net/Benchmarks/Show/11264/0/for-vs-foreach-vs-some-vs-every-vs-forof-vs-map</p>
 <ul>
-<li>For mutation traversing, use every instead of others</li>
+<li>For mutation traversing, use every instead of others, use native every (2.5x faster) instead of lodash every</li>
 </ul>
 <p>https://www.measurethat.net/Benchmarks/Show/11265/0/for-vs-foreach-vs-some-vs-every-vs-forof-vs-map-with-mu</p>
 <ul>
 <li>Object lookup 2.5x faster than Map</li>
 </ul>
 <p>https://www.measurethat.net/Benchmarks/Show/11262/0/map-vs-objects</p>
-<ul>
-<li>Use fast-deep-equal for deep compare, 10x faster than lodash</li>
-</ul>
-<p>https://www.npmjs.com/package/fast-deep-equal</p>
+<p>-- fast-deep-equal 4x faster than lodash.isEqual (under node), lodash.isEqual (~2x) &gt; fast-deep-equal (in browser)</p>
+<p>https://www.npmjs.com/package/fast-deep-equal<br>
+https://www.measurethat.net/Benchmarks/Show/11503/0/lodashisequal-vs-fast-deep-equallodash</p>
 <h2>License</h2>
 <p>MIT</p></article>
     </section>

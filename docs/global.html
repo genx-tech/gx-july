@@ -33,7 +33,7 @@
 			<li class="dropdown">
 				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="global.html#identity">identity</a></li><li><a href="global.html#insertBetween">insertBetween</a></li><li><a href="global.html#isPlainObject">isPlainObject</a></li><li><a href="global.html#remap">remap</a></li><li><a href="global.html#replaceAll">replaceAll</a></li><li><a href="global.html#unquote">unquote</a></li>
+					<li><a href="global.html#difference">difference</a></li><li><a href="global.html#identity">identity</a></li><li><a href="global.html#insertBetween">insertBetween</a></li><li><a href="global.html#isPlainObject">isPlainObject</a></li><li><a href="global.html#remap">remap</a></li><li><a href="global.html#replaceAll">replaceAll</a></li><li><a href="global.html#unquote">unquote</a></li>
 				</ul>
 			</li>
 			
@@ -353,6 +353,187 @@
             
 <hr>
 <dt>
+    <h4 class="name" id="difference"><span class="type-signature"></span>difference(base, object)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Deep diff between two object</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>base</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Object to be compared</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>object</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Object compared</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		object/diff.js
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>Return the key-value pair from object which of the value is different from base with the same key, or undefined if no difference</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
     <h4 class="name" id="isPlainObject"><span class="type-signature"></span>isPlainObject(any)</h4>
     
     
@@ -466,7 +647,7 @@
 	<dt class="tag-see method-doc-label method-doc-details-label">See:</dt>
 	<dd class="tag-see">
 		<ul>
-			<li><p><a href="https://www.measurethat.net/Benchmarks/Show/10259/0/lodash-isplainobject-vs-js-constructor-check">benchmark</a></p></li>
+			<li><p><a href="https://www.measurethat.net/Benchmarks/Show/11574/0/lodash-isplainobject-vs-js-constructor-check-with-more">benchmark</a></p></li>
 			</ul>
 	</dd>
 	

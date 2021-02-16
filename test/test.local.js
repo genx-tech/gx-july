@@ -3,7 +3,8 @@
 module.exports = {
     only: [        
         //"benchmark-object-traverse",
-        "benchmark-deep-equal",
+        //"benchmark-deep-equal",
+        "benchmark-zip-and-flat"
     ],
     skip: [
 

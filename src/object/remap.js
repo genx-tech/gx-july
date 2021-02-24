@@ -1,3 +1,5 @@
+import _each from 'lodash/each';
+
 /**
  * Remap the keys of object elements in an array, like projection.
  * @param {*} object
@@ -8,8 +10,8 @@ function remap(object, mapping, keepUnmapped) {
     if (typeof mapping === 'string') return { [mapping]: object };
 
     let newObj = {};
-    Object.entries(object).map(([k, v]) => {
-        if (k in mapping) {
+    _each(object, (v, k) => {
+        if (Object.prototype.hasOwnProperty.call(mapping, k)) {
             let nk = mapping[k];
             if (Array.isArray(nk)) {
                 newObj[nk[0]] = {

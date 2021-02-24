@@ -1,6 +1,7 @@
 import resolve from '@rollup/plugin-node-resolve';
 import babel from '@rollup/plugin-babel';
 import { terser } from 'rollup-plugin-terser';
+import commonjs from '@rollup/plugin-commonjs';
 
 export default {
     input: 'src/index.js',
@@ -12,5 +13,5 @@ export default {
             plugins: [terser()],
         },
     ],
-    plugins: [resolve(), babel({ babelHelpers: 'bundled' })],
+    plugins: [commonjs(), resolve(), babel({ babelHelpers: 'bundled' })],
 };

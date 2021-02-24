@@ -3,8 +3,7 @@
     "version": "0.1.0",
     "description": "Gen-X JavaScript Utility Library for both Node.js and browser",
     "main": "lib/commonjs/index",
-    "module": "lib/module/index",
-    "source": "src/index",
+    "module": "lib/module/index",    
     "files": [
         "src",
         "lib",
@@ -12,6 +11,9 @@
         "!**/__fixtures__",
         "!**/__mocks__"
     ],
+    "publishConfig": {
+        "access": "public"
+    },
     "scripts": {
         "doc": "jsdoc -c jsdoc.json -t ./node_modules/ink-docstrap/template -R README.md -d './docs' -r --verbose ./src",
         "test": "BABEL_ENV=test mocha --recursive src/**/*.spec.js",
@@ -37,10 +39,7 @@
     "bugs": {
         "url": "https://github.com/genx-tech/gx-july/issues"
     },
-    "homepage": "https://github.com/genx-tech/gx-july#readme",
-    "publishConfig": {
-        "registry": "https://registry.npmjs.org/"
-    },
+    "homepage": "https://github.com/genx-tech/gx-july#readme",    
     "devDependencies": {
         "@babel/cli": "^7.12.10",
         "@babel/core": "^7.12.10",
@@ -51,6 +50,7 @@
         "@react-native-community/eslint-config": "^2.0.0",
         "@release-it/conventional-changelog": "^2.0.0",
         "@rollup/plugin-babel": "^5.2.2",
+        "@rollup/plugin-commonjs": "^17.1.0",
         "@rollup/plugin-node-resolve": "^11.1.0",
         "commitlint": "^11.0.0",
         "core-js": "^3.8.3",

@@ -59,6 +59,8 @@ mapped.should.be.eql({
 
 ## High Benchmark Guidelines
 
+-   Object.hasOwnProperty > Object in (almost the same)
+
 -   Object traversing, lodash.each > for...in > Object.entries.forEach
 
 https://www.measurethat.net/Benchmarks/Show/11499/0/lodash-each-vs-objectentriesforeach-vs-forin

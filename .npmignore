@@ -4,8 +4,11 @@
 .gitignore
 .gitattributes
 .travis.yml
+.editorconfig
+jsconfig.json
 jsdoc.json
 babel.config.js
+rollup.config.js
 *.log
 *.md
 src
@@ -16,4 +19,4 @@ coverage
 .nyc_output
 __tests__
 lib/**/*.spec.js
-dist
+allure-results

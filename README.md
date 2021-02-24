@@ -80,7 +80,7 @@ https://www.measurethat.net/Benchmarks/Show/11265/0/for-vs-foreach-vs-some-vs-ev
 
 https://www.measurethat.net/Benchmarks/Show/11262/0/map-vs-objects
 
--- fast-deep-equal 4x faster than lodash.isEqual (under node), lodash.isEqual (~2x) > fast-deep-equal (in browser)
+--  fast-deep-equal 4x faster than lodash.isEqual (under node), lodash.isEqual (~2x) > fast-deep-equal (in browser)
 
 https://www.npmjs.com/package/fast-deep-equal
 https://www.measurethat.net/Benchmarks/Show/11503/0/lodashisequal-vs-fast-deep-equallodash

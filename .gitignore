@@ -61,3 +61,5 @@ dist/
 .nyc_output
 coverage
 allure-results
+
+test.local.js

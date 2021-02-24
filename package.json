@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "description": "Gen-X JavaScript Utility Library for both Node.js and browser",
     "main": "lib/commonjs/index",
-    "module": "lib/module/index",    
+    "module": "lib/module/index",
     "files": [
         "src",
         "lib",
@@ -39,7 +39,7 @@
     "bugs": {
         "url": "https://github.com/genx-tech/gx-july/issues"
     },
-    "homepage": "https://github.com/genx-tech/gx-july#readme",    
+    "homepage": "https://github.com/genx-tech/gx-july#readme",
     "devDependencies": {
         "@babel/cli": "^7.12.10",
         "@babel/core": "^7.12.10",

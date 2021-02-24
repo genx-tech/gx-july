@@ -13,7 +13,7 @@ function remap(object, mapping, keepUnmapped) {
     _each(object, (v, k) => {
         /* eslint-disable no-prototype-builtins */
         if (mapping.hasOwnProperty(k)) {
-        /* eslint-enable no-prototype-builtins */
+            /* eslint-enable no-prototype-builtins */
             let nk = mapping[k];
             if (Array.isArray(nk)) {
                 newObj[nk[0]] = {

@@ -13,4 +13,5 @@ module.exports = {
         },
     },
     presets: ['@babel/env'],
+    ignore: ['**/__test__/**'],
 };

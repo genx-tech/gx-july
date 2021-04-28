@@ -70,7 +70,9 @@
         "rollup-plugin-terser": "^7.0.2",
         "should": "^13.2.3"
     },
-    "peerDependencies": {},
+    "peerDependencies": {
+        "lodash": ""
+    },
     "husky": {
         "hooks": {
             "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
@@ -112,7 +114,8 @@
         "extends": "eslint:recommended",
         "env": {
             "shared-node-browser": true,
-            "commonjs": true
+            "commonjs": true,
+            "es6": true
         },
         "parserOptions": {
             "ecmaVersion": 12,

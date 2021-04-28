@@ -1,9 +1,11 @@
 export * from './lang';
 export * from './array';
 export { default as zipAndFlat } from './array/zipAndFlat';
-export * from './object';
+export { default as isPlainObject } from './object/isPlainObject';
 export { default as remap } from './object/remap';
 export { default as diff } from './object/diff';
 export { default as take } from './object/take';
+export { default as eachAsync_ } from './object/eachAsync_';
 export * from './string';
 export { default as unquote } from './string/unquote';
+export { default as _ } from 'lodash';

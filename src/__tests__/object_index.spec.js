@@ -1,4 +1,4 @@
-import { isPlainObject } from '../object/index';
+import isPlainObject from '../object/isPlainObject';
 
 describe('isplainobject', function () {
     it('Check a variable whether is plain object.', function () {

@@ -1,4 +1,5 @@
-import {insertBetween} from '../array/index';
+import insertBetween from '../array/insertBetween';
+
 describe('unit:insertBetween', function() {
     it('Insert a separator as element into an array.',async function () {
         const arr1 = [1,2,3,4];

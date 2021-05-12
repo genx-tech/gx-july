@@ -1,14 +1,12 @@
-import { ensureEndsWith, ensureStartsWith, dropIfEndsWith, replaceAll} from "../string/index";
-
+import { ensureEndsWith, ensureStartsWith, dropIfEndsWith, dropIfStartsWith, replaceAll} from "../string/text";
 
 describe('string index', () => {
     const a = "abc";
     const b = "a";
     const c = "aaa";
     const d = "";
-    it('ensureEndsWith.', () => {
-        
 
+    it('ensureEndsWith.', () => {
         const ensure_ends_with_a = ensureEndsWith(a,"a");
         const ensure_ends_with_b = ensureEndsWith(b,"a");
         const ensure_ends_with_c = ensureEndsWith(c,"a");
@@ -19,6 +17,7 @@ describe('string index', () => {
         ensure_ends_with_c.should.be.eql("aaa");
         ensure_ends_with_d.should.be.eql("");
     });
+
     it('ensureStartsWith', () => {
         const ensure_starts_with_a = ensureStartsWith(a,"c");
         const ensure_starts_with_b = ensureStartsWith(b,"a");
@@ -30,15 +29,27 @@ describe('string index', () => {
         ensure_starts_with_c.should.be.eql("aaa");
         ensure_starts_with_d.should.be.eql("");
     });
+
     it('dropIfEndsWith', () => {
         const drop_if_ends_with_a = dropIfEndsWith(a,"c");
         const drop_if_ends_with_b = dropIfEndsWith(b,"a");
         const drop_if_ends_with_c = dropIfEndsWith(c,"a");
         
-        drop_if_ends_with_a.should.be.eql("c");
-        drop_if_ends_with_b.should.be.eql("a");
-        drop_if_ends_with_c.should.be.eql("a");
+        drop_if_ends_with_a.should.be.eql("ab");
+        drop_if_ends_with_b.should.be.eql("");
+        drop_if_ends_with_c.should.be.eql("aa");
     });
+
+    it('dropIfStartsWith', () => {
+        const drop_if_ends_with_a = dropIfStartsWith(a,"c");
+        const drop_if_ends_with_b = dropIfStartsWith(b,"a");
+        const drop_if_ends_with_c = dropIfStartsWith(c,"a");
+        
+        drop_if_ends_with_a.should.be.eql("abc");
+        drop_if_ends_with_b.should.be.eql("");
+        drop_if_ends_with_c.should.be.eql("aa");
+    });
+
     it('replaceAll', () => {
         const replaceAll_a = replaceAll(a,"a","b");
         const replaceAll_b = replaceAll(b,"a","b");

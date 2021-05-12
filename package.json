@@ -70,9 +70,6 @@
         "rollup-plugin-terser": "^7.0.2",
         "should": "^13.2.3"
     },
-    "peerDependencies": {
-        "lodash": ""
-    },
     "husky": {
         "hooks": {
             "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
@@ -152,7 +149,9 @@
         "trailingComma": "es5",
         "useTabs": false
     },
-    "dependencies": {},
+    "dependencies": {
+        "lodash": "^4.17.21"
+    },
     "react-native-builder-bob": {
         "source": "src",
         "output": "lib",

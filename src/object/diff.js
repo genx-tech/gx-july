@@ -3,7 +3,7 @@ import _reduce from 'lodash/reduce';
 import _isEmpty from 'lodash/isEmpty';
 import _differenceWith from 'lodash/differenceWith';
 
-import { ifThen } from '../lang';
+import ifThen from '../lang/ifThen';
 
 const arrayOperators = [() => [], (array, k, v) => array.push(v)];
 const objectOperators = [() => ({}), (obj, k, v) => (obj[k] = v)];

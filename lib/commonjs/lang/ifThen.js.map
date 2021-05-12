@@ -1,0 +1,1 @@
+{"version":3,"sources":["ifThen.js"],"names":["ifThen","obj","predicate","then"],"mappings":";;;;;;;AAAA,IAAMA,MAAM,GAAG,SAATA,MAAS,CAACC,GAAD,EAAMC,SAAN,EAAiBC,IAAjB;AAAA,SAA0BD,SAAS,CAACD,GAAD,CAAT,GAAiBE,IAAjB,GAAwBF,GAAlD;AAAA,CAAf;;eAEeD,M","sourcesContent":["const ifThen = (obj, predicate, then) => predicate(obj) ? then : obj;\n\nexport default ifThen;"]}

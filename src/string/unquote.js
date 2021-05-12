@@ -1,4 +1,4 @@
-import { replaceAll } from './index';
+import { replaceAll } from './text';
 
 /**
  * Unquote a string

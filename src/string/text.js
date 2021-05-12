@@ -5,7 +5,11 @@ export const ensureStartsWith = (str, starting) =>
     str.startsWith(starting) ? str : starting + str;
 
 export const dropIfEndsWith = (str, ending) =>
-    str.endsWith(ending) ? str.slice(-1) : str;
+    str.endsWith(ending) ? str.substr(0, str.length-ending.length) : str;
+
+export const dropIfStartsWith = (str, starting) =>
+    str.startsWith(starting) ? str.substr(starting.length) : str;
+
 
 /**
  * Replace all occurance of "search" with "replacement" in a string.
@@ -17,3 +21,4 @@ export const dropIfEndsWith = (str, ending) =>
  */
 export const replaceAll = (str, search, replacement) =>
     str.split(search).join(replacement);
+

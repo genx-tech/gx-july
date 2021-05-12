@@ -1,1 +1,0 @@
-{"version":3,"sources":["index.js"],"names":["ifThen","obj","predicate","then"],"mappings":";;;;;;;AAAO,SAASA,MAAT,CAAgBC,GAAhB,EAAqBC,SAArB,EAAgCC,IAAhC,EAAsC;AACzC,SAAOD,SAAS,CAACD,GAAD,CAAT,GAAiBE,IAAjB,GAAwBF,GAA/B;AACH","sourcesContent":["export function ifThen(obj, predicate, then) {\n    return predicate(obj) ? then : obj;\n}\n"]}

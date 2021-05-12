@@ -14,6 +14,7 @@ export { default as eachAsync_ } from './object/eachAsync_';
 
 export * as text from './string/text';
 export * as url from './string/url';
+export { default as quote } from './string/quote';
 export { default as unquote } from './string/unquote';
 
 export { default as _ } from 'lodash';

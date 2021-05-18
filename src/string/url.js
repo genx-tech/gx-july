@@ -2,8 +2,10 @@ import { dropIfEndsWith, ensureStartsWith } from './text';
 
 /**
  * Join base url and the extra url path.
- * @param  {String} base
- * @param  {String} extraPath
+ * @function module:url.join
+ * @param {string} base
+ * @param {string} extraPath
+ * @returns {string}
  */
 export function join(base, extraPath) {
     return base
@@ -15,6 +17,7 @@ export function join(base, extraPath) {
 
 /**
  * Merge the query parameters into given url.
+ * @function module:url.appendQuery
  * @param {string} url - Original url.
  * @param {object} query - Key-value pairs query object to be merged into the url.
  * @returns {string}
@@ -44,6 +47,7 @@ export function appendQuery(url, query) {
 
 /**
  * Parse query string into key-value pairs.
+ * @function module:url.queryStringToObject
  * @param {string} qs
  * @returns {object}
  */
@@ -63,8 +67,9 @@ export function queryStringToObject(qs) {
 
 /**
  * Stringify an object into url query string.
+ * @function module:url.objectToQueryString
  * @param {*} obj
- * @returns
+ * @returns {string}
  */
 export function objectToQueryString(obj) {
     let parts = [];

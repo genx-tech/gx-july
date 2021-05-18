@@ -1,7 +1,9 @@
 /**
  * Insert a separator as element into an array.
+ * @alias array.insertBetween
  * @param {Array} arr
  * @param {*} separator
+ * @returns {Array} The newly inserted array
  */
  const insertBetween = (arr, separator) =>
     arr

@@ -1,9 +1,10 @@
 /**
  * Add hooks before an object's method is being called and after.
+ * @alias lang.hookInvoke
  * @param {*} obj
  * @param {*} onCalling - Before hook
  * @param {*} onCalled - After hook
- * @returns
+ * @returns {Object} The hooked object
  */
 const hookInvoke = (obj, onCalling, onCalled) =>
     new Proxy(obj, {

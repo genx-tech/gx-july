@@ -2,9 +2,11 @@ import _each from 'lodash/each';
 
 /**
  * Remap the keys of object elements in an array, like projection.
+ * @alias object.remap
  * @param {*} object
  * @param {Object} mapping - key to newKey or key to array[ newKey, valueMap ] for next level mapping
  * @param {boolean} keepUnmapped - If true, will keep those not in mapping as its original key, otherwise filter out
+ * @returns {Object} Remapped object
  */
 function remap(object, mapping, keepUnmapped) {
     if (typeof mapping === 'string') return { [mapping]: object };

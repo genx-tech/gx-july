@@ -2,6 +2,7 @@ import { replaceAll } from './text';
 
 /**
  * Quote a string.
+ * @alias string.quote
  * @param {string} str
  * @param {string} quoteChar
  * @returns {string}

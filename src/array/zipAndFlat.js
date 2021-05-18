@@ -1,10 +1,11 @@
 /**
  * One-by-one merge two arrays into one
+ * @alias array.zipAndFlat
  * @param {Array} arr1
  * @param {Array} arr2
  * @returns {Array}
  */
-export default function zipAndFlat(arr1, arr2) {
+function zipAndFlat(arr1, arr2) {
     let long,
         result = [],
         ll,
@@ -33,3 +34,5 @@ export default function zipAndFlat(arr1, arr2) {
 
     return result;
 }
+
+export default zipAndFlat;

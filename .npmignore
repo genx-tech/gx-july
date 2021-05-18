@@ -1,8 +1,10 @@
 # .npmignore 
 
+.DS_Store
 .babelrc
 .gitignore
 .gitattributes
+.prettierignore
 .travis.yml
 .editorconfig
 jsconfig.json
@@ -20,3 +22,4 @@ coverage
 __tests__
 lib/**/*.spec.js
 allure-results
+dist

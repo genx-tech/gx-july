@@ -64,6 +64,7 @@ function _diff(base, object, creator, setter) {
 
 /**
  * Deep diff between two object
+ * @alias object.difference
  * @param  {Object} base - Object to be compared
  * @param  {Object} object - Object compared
  * @return {Object} Return the key-value pair from object which of the value is different from base with the same key, or undefined if no difference

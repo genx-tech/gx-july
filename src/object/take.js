@@ -1,7 +1,9 @@
 /**
  * Creates a new object with n k-v pairs taken from the beginning.
- * @param {*} object
+ * @alias object.take
+ * @param {Object} object
  * @param {integer} [n=1] - The number of k-v pair to take.
+ * @returns {Object} 
  */
 function take(object, n) {
     n == null && (n = 1);

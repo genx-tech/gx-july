@@ -2,11 +2,13 @@ import { replaceAll } from './text';
 
 /**
  * Unquote a string
- * @param {String} str
+ * @alias string.unquote
+ * @param {string} str
  * @param {boolean} [unescape=false] - True to unescape slashed quote, default false
  * @param {Set} [quoteSet] - Set of chars
+ * @returns {string}
  */
-const unquote = (str, unescape, quoteSet) => {
+function unquote(str, unescape, quoteSet) {
     if (typeof str !== 'string') {
         return str;
     }
@@ -20,9 +22,15 @@ const unquote = (str, unescape, quoteSet) => {
         return str;
     }
 
-    if (quoteSet && !quoteSet.has(start)) {
-        return str;
-    }
+    if (quoteSet) {
+        if (Array.isArray(quoteSet)) {
+            quoteSet = new Set(quoteSet);
+        }
+    
+        if (!quoteSet.has(start)) {
+            return str;
+        }
+    }    
 
     str = str.slice(1, -1);
 
@@ -31,6 +39,6 @@ const unquote = (str, unescape, quoteSet) => {
     }
 
     return str;
-};
+}
 
 export default unquote;

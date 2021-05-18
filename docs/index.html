@@ -31,9 +31,23 @@
 		<ul class="nav navbar-nav">
 			
 			<li class="dropdown">
+				<a href="namespaces.list.html" class="dropdown-toggle" data-toggle="dropdown">Namespaces<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="array.html">array</a></li><li><a href="lang.html">lang</a></li><li><a href="object.html">object</a></li><li><a href="string.html">string</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="module-naming.html">naming</a></li><li><a href="module-text.html">text</a></li><li><a href="module-url.html">url</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
 				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="global.html#difference">difference</a></li><li><a href="global.html#identity">identity</a></li><li><a href="global.html#insertBetween">insertBetween</a></li><li><a href="global.html#isPlainObject">isPlainObject</a></li><li><a href="global.html#remap">remap</a></li><li><a href="global.html#replaceAll">replaceAll</a></li><li><a href="global.html#unquote">unquote</a></li>
+					<li><a href="global.html#_">_</a></li>
 				</ul>
 			</li>
 			
@@ -92,6 +106,17 @@
 <pre class="prettyprint source lang-sh"><code>npm install @genx/july
 </code></pre>
 <h2>Usage</h2>
+<pre class="prettyprint source lang-js"><code>import { text, naming, url } from '@genx/july';
+
+//3.5x faster than String.replaceAll
+text.replaceAll(&quot;abcdabcd&quot;, &quot;a&quot;, &quot;b&quot;);
+
+naming.pascalCase(&quot;agency-client&quot;); //AgencyClient
+
+//https://www.some.com?key=value2&key2=value3
+url.appendQuery(&quot;https://www.some.com?key=value&quot;, { key: 'value2', 'key2': 'value3' });
+
+</code></pre>
 <pre class="prettyprint source lang-js"><code>import { remap } from '@genx/july';
 
 // ...
@@ -139,7 +164,12 @@ mapped.should.be.eql({
 </code></pre>
 <h2>High Benchmark Guidelines</h2>
 <ul>
-<li>Object traversing, lodash.each &gt; for...in &gt; Object.entries.forEach</li>
+<li>
+<p>Object.hasOwnProperty &gt; Object in (almost the same)</p>
+</li>
+<li>
+<p>Object traversing, lodash.each &gt; for...in &gt; Object.entries.forEach</p>
+</li>
 </ul>
 <p>https://www.measurethat.net/Benchmarks/Show/11499/0/lodash-each-vs-objectentriesforeach-vs-forin</p>
 <ul>

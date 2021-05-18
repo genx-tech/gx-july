@@ -2,12 +2,13 @@ import sleep_ from './sleep_';
 
 /**
  * Run the checker every given duration for certain rounds until the checker returns non-false value.
+ * @alias lang.waitUntil_
  * @param {Function} checker - predicator
  * @param {integer} [checkInterval=1000]
  * @param {integer} [maxRounds=10]
  * @returns {Promise.<boolean>}
  */
-export default async function waitUntil_(
+async function waitUntil_(
     checker,
     checkInterval = 1000,
     maxRounds = 10
@@ -28,3 +29,5 @@ export default async function waitUntil_(
 
     return result;
 }
+
+export default waitUntil_;

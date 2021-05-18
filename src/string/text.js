@@ -12,7 +12,7 @@ export const ensureEndsWith = (str, ending) =>
  * Ensure a string starts with *starting*
  * @function module:text.ensureStartsWith
  * @param {*} str 
- * @param {*} ending 
+ * @param {*} starting 
  * @returns {string}
  */
 export const ensureStartsWith = (str, starting) =>

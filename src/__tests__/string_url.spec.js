@@ -16,6 +16,19 @@ describe('url', () => {
         c.should.be.eql(base);
     });
 
+    it('join multi url', () => {
+        const base = '/abc';
+        const extra = 'def/';
+        const extra2 = '/abc/';
+        const extra3 = '/abcd';
+
+        const a = join(base, extra, extra2);
+        const b = join(base, extra, extra2, extra3);
+
+        a.should.be.eql('/abc/def/abc/');
+        b.should.be.eql('/abc/def/abc/abcd');
+    });
+
     it('url append query', () => {
         const url1 = 'https://abc.com/efg';
         const url2 = 'https://abc.com/efg?k1=v1';

@@ -1,28 +1,21 @@
-module.exports = {
-    env: {
-        test: {
-            presets: [
-                [
-                    '@babel/env',
-                    {
-                        useBuiltIns: 'usage',
-                        corejs: { version: '3.8', proposals: true },
-                    },
-                ],
+module.exports = function (api) {
+    let isProduction = api.env(['production']);
+
+    return {        
+        presets: [
+            [
+                '@babel/env',
             ],
-        },
-    },
-    presets: [
-        [
-            '@babel/env',
-            {
-                useBuiltIns: 'usage',
-                corejs: { version: '3.8', proposals: true },
-                targets: {
-                    "node": "current"
-                }
-            },
         ],
-    ],
-    ignore: ['**/__test__/**'],
+        plugins: [
+            [
+                'contract',
+                {
+                    strip: isProduction,
+                    envStrip: true,
+                },
+            ],
+            '@babel/plugin-proposal-class-properties',
+        ],
+    };
 };

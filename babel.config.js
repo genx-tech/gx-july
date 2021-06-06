@@ -1,12 +1,21 @@
 module.exports = function (api) {
     let isProduction = api.env(['production']);
 
-    return {        
-        presets: [
-            [
-                '@babel/env',
-            ],
-        ],
+    return {
+        env: {
+            test: {
+                presets: [
+                    [
+                        '@babel/env',
+                        {
+                            useBuiltIns: 'usage',
+                            corejs: { version: '3.8', proposals: true },
+                        },
+                    ],
+                ],
+            },
+        },
+        presets: [['@babel/env']],
         plugins: [
             [
                 'contract',

@@ -1,6 +1,6 @@
 {
     "name": "@genx/july",
-    "version": "0.2.2",
+    "version": "0.2.3",
     "description": "Gen-X JavaScript Utility Library for both Node.js and browser",
     "main": "lib/commonjs/index",
     "module": "lib/module/index",
@@ -9,8 +9,8 @@
     },
     "scripts": {
         "doc": "jsdoc -c jsdoc.json -t ./node_modules/ink-docstrap/template -R README.md -d './docs' -r --verbose ./src",
-        "test": "BABEL_ENV=test mocha --recursive src/**/*.spec.js",
-        "cover": "BABEL_ENV=test nyc --reporter=html --reporter=text mocha --recursive src/**/*.spec.js",
+        "test": "cross-env BABEL_ENV=test NODE_RT=babel mocha --recursive src/**/*.spec.js",
+        "cover": "cross-env BABEL_ENV=test NODE_RT=babel nyc --reporter=html --reporter=text mocha --recursive src/**/*.spec.js",
         "test:clean": "rm -rf allure-results",
         "test:spec": "npm run test:clean && cross-env BABEL_ENV=test NODE_RT=babel mocha --reporter mocha-multi --reporter-options mocha-multi=test/mocha-multi-reporters.json test/*.spec.js",
         "cover:spec": "npm run test:clean && cross-env BABEL_ENV=test COVER_MODE=1 NODE_RT=babel nyc --reporter=html --reporter=text -- mocha --reporter progress test/*.spec.js && open ./coverage/index.html",

@@ -1,5 +1,5 @@
-import _get from 'lodash/get';
-import _set from 'lodash/set';
+import _get from './get';
+import _set from './set';
 
 /**
  * Push an value into an array element of a collection

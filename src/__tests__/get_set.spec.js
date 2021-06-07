@@ -17,6 +17,7 @@ describe('get_set', () => {
 
         should.not.exist(get(null));
         get(null, null, 'default').should.be.exactly('default');
+        get(obj, 'key5.key1', 'default').should.be.exactly('default');
 
         get(obj, 'key5').should.be.eql({
             key2: 20

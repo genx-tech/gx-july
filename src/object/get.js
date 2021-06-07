@@ -23,7 +23,7 @@ const _get = (collection, keyPath, defaultValue) => {
         collection = collection[nodes[index++]];
     }
 
-    return index && index == length ? collection : defaultValue;
+    return collection != null && index && index == length ? collection : defaultValue;
 };
 
 export default _get;

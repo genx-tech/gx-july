@@ -1,3 +1,5 @@
+const targetLTSVersion = '12.0';
+
 module.exports = function (api) {
     let isProduction = api.env(['production']);
 
@@ -15,7 +17,17 @@ module.exports = function (api) {
                 ],
             },
         },
-        presets: [['@babel/env']],
+        presets: [
+            [
+                '@babel/env',
+                {
+                    targets: {
+                        node: targetLTSVersion,
+                    },
+                    exclude: ['@babel/plugin-transform-regenerator'],
+                },
+            ],
+        ],
         plugins: [
             [
                 'contract',

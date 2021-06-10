@@ -13,7 +13,7 @@ const _get = (collection, keyPath, defaultValue) => {
     let nodes = Array.isArray(keyPath) ? keyPath : keyPath.split('.');
 
     if (collection == null) {
-        return defaultValue;
+        return defaultValue ?? collection;
     }
 
     let index = 0;
@@ -23,7 +23,7 @@ const _get = (collection, keyPath, defaultValue) => {
         collection = collection[nodes[index++]];
     }
 
-    return collection != null && index && index == length ? collection : defaultValue;
+    return collection != null && index && index == length ? collection : (defaultValue ?? collection);
 };
 
 export default _get;

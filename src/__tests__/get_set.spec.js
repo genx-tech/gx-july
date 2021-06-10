@@ -12,7 +12,8 @@ describe('get_set', () => {
             },
             key5: {
                 key2: 20
-            }
+            },
+            key6: null
         };
 
         should.not.exist(get(null));
@@ -25,6 +26,9 @@ describe('get_set', () => {
         get(obj, 'key5.key2').should.be.exactly(20);
         get(obj, 'key1.key2.key3').should.be.exactly(10);
         get(obj, 'key1.key4').should.be.exactly(20);
+        const a = get(obj, 'key6');
+        should.not.exist(a);
+        (typeof a).should.not.be.eql('undefined');
         
     });
 

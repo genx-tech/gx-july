@@ -46,7 +46,7 @@ describe('get_set', () => {
         };
 
         should.not.exist(set(null));
-        set(obj).should.be.eql(obj);
+        set(obj).should.be.eql(obj);        
 
         set(obj, 'key1.key3', 100).should.be.eql({
             key1: {
@@ -91,6 +91,17 @@ describe('get_set', () => {
             key1: null,
             key5: {
                 key2: 20
+            }
+        });
+
+        const obj2 = { '*': {} };
+
+        set(obj2, ['tfa', 'enable'], true);
+        
+        obj2.should.be.eql({
+            '*': {},
+            'tfa': {
+                enable: true
             }
         });
         

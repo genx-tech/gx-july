@@ -30,9 +30,16 @@ export { default as remap } from './object/remap';
 export { default as diff } from './object/diff';
 export { default as take } from './object/take';
 export { default as pushIntoBucket } from './object/pushIntoBucket';
-export { default as eachAsync_ } from './object/eachAsync_';
 export { default as get } from './object/get';
 export { default as set } from './object/set';
+
+/**
+ * @namespace collection
+ */
+
+export { default as eachAsync_ } from './collection/eachAsync_';
+export { default as findAsync_ } from './collection/findAsync_';
+export { default as filterAsync_ } from './collection/filterAsync_';
 
 /**
  * @namespace string

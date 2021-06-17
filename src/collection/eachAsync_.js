@@ -1,4 +1,4 @@
-import isPlainObject from './isPlainObject';
+import isPlainObject from '../object/isPlainObject';
 
 /**
  * Iterate an array of an object asynchronously

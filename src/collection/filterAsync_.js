@@ -3,7 +3,7 @@ import isPlainObject from '../object/isPlainObject';
 /**
  * Iterates over elements of collection asynchronously, returning an array of all elements predicate returns truthy for. 
  * The predicate is invoked asynchronously with three arguments: (value, index|key, collection).
- * @alias object.findAsync_
+ * @alias collection.filterAsync_
  * @param {Array|Object} obj
  * @param {asyncIterator} asyncPredicate
  * @returns {Promise.<Object|undefined>}

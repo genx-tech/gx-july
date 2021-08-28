@@ -70,6 +70,14 @@ mapped.should.be.eql({
 });
 ```
 
+```js
+import { _, eachAsync_, filterAsync_, findAsync_ } from '@genx/july';
+// _: lodash
+// eachAsync_: like _.each() with async function support
+// filterAsync_: like _.filter() with async function support
+// findAsync_: like _.find() with async function support 
+```
+
 ## High Benchmark Guidelines
 
 -   Object.hasOwnProperty > Object in (almost the same)

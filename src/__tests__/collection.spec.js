@@ -3,7 +3,7 @@ import filterAsync_ from "../collection/filterAsync_";
 import findAsync_ from "../collection/findAsync_";
 import sleep_ from '../lang/sleep_';
 
-describe.only('collection', () => {
+describe('collection', () => {
    const array = [ 10, 20, 30, 40 ];
    const obj = {
        k1: 100,

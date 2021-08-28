@@ -2,7 +2,7 @@ import isPlainObject from '../object/isPlainObject';
 
 /**
  * Iterate an array of an object asynchronously
- * @alias object.eachAsync_
+ * @alias collection.eachAsync_
  * @param {Array|Object} obj
  * @param {asyncIterator} iterator
  * @returns {Promise.<Array|Object>}

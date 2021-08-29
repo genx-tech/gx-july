@@ -1,3 +1,11 @@
+/**
+ * Convert an array into a k-v paired object.
+ * @alias array.arrayToObject
+ * @param {*} arrayOfObjects 
+ * @param {*} keyGetter 
+ * @param {*} valueGetter 
+ * @returns {object}
+ */
 const arrayToObject = (arrayOfObjects, keyGetter, valueGetter) => {
     const _keyGetter =
         typeof keyGetter === 'function' ? keyGetter : (obj) => obj[keyGetter];

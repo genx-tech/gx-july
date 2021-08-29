@@ -32,6 +32,7 @@ export { default as take } from './object/take';
 export { default as pushIntoBucket } from './object/pushIntoBucket';
 export { default as get } from './object/get';
 export { default as set } from './object/set';
+export { default as objectToArray } from './object/objectToArray'; 
 
 /**
  * @namespace collection

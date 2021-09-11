@@ -1,7 +1,7 @@
 "use strict";
 
 const testSuite = require("@genx/test");
-const { zipAndFlat } = require("../src");
+const { zipAndFlat } = require("..");
 const _ = require('lodash');
 
 testSuite(

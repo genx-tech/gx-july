@@ -2,9 +2,10 @@ import isPlainObject from '../object/isPlainObject';
 
 /**
  * Iterate a collection asynchronously until predicate returns true
- * The returned value is the key of found item if the given collection is an object. 
+ * The returned value is the key of found item if the given collection is an object.
  * That's different from the _.find() function in lodash.
  * @alias collection.findAsync_
+ * @async
  * @param {Array|Object} obj
  * @param {asyncIterator} asyncPredicate
  * @returns {Promise.<Object|undefined>}

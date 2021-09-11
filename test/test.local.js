@@ -4,8 +4,8 @@ module.exports = {
     only: [        
         //"benchmark-object-traverse",
         //"benchmark-deep-equal",
-        //"benchmark-zip-and-flat",
-        "benchmark-object-take-pick-vs-for"
+        "benchmark-zip-and-flat",
+        //"benchmark-object-take-pick-vs-for"
     ],
     skip: [
 

@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.js"],"names":["default","validateEmail"],"mappings":"AAAA,SAASA,OAAO,IAAIC,aAApB,QAAyC,SAAzC","sourcesContent":["export { default as validateEmail } from './email';\n"]}

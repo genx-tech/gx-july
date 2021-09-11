@@ -1,10 +1,10 @@
 /**
  * Convert an array into a k-v paired object.
  * @alias array.arrayToObject
- * @param {*} arrayOfObjects 
- * @param {*} keyGetter 
- * @param {*} valueGetter 
- * @returns {object}
+ * @param {*} arrayOfObjects
+ * @param {*} keyGetter
+ * @param {*} valueGetter
+ * @returns {Object}
  */
 const arrayToObject = (arrayOfObjects, keyGetter, valueGetter) => {
     const _keyGetter =

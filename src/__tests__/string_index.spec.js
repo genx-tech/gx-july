@@ -51,6 +51,10 @@ describe('string index', () => {
     });
 
     it('replaceAll', () => {
+        const replaceAll_empty = replaceAll("","a","b");
+        replaceAll_empty.should.be.exactly("");
+
+
         const replaceAll_a = replaceAll(a,"a","b");
         const replaceAll_b = replaceAll(b,"a","b");
         const replaceAll_c = replaceAll(c,"a","b");

@@ -1,12 +1,12 @@
-import { replaceAll } from './text';
+import replaceAll from './replaceAll';
 
 /**
  * Unquote a string
- * @alias string.unquote
- * @param {string} str
+ * @function string.unquote
+ * @param {String} str
  * @param {boolean} [unescape=false] - True to unescape slashed quote, default false
- * @param {Set} [quoteSet] - Set of chars
- * @returns {string}
+ * @param {Set|Array} [quoteSet] - Set of chars
+ * @returns {String}
  */
 function unquote(str, unescape, quoteSet) {
     if (typeof str !== 'string') {
@@ -26,11 +26,11 @@ function unquote(str, unescape, quoteSet) {
         if (Array.isArray(quoteSet)) {
             quoteSet = new Set(quoteSet);
         }
-    
+
         if (!quoteSet.has(start)) {
             return str;
         }
-    }    
+    }
 
     str = str.slice(1, -1);
 

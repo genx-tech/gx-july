@@ -7,7 +7,7 @@
 
 # VSCode
 .vscode/
-jsconfig.json
+#jsconfig.json
 
 # Xcode
 #

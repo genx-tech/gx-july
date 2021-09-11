@@ -1,14 +1,14 @@
-import { replaceAll } from './text';
+import replaceAll from './replaceAll';
 
 /**
  * Quote a string.
- * @alias string.quote
- * @param {string} str
- * @param {string} quoteChar
- * @returns {string}
+ * @function string.quote
+ * @param {String} str
+ * @param {String} [quoteChar=']
+ * @returns {String}
  */
 function quote(str, quoteChar = '"') {
-    return quoteChar + replaceAll(str, quoteChar, "\\" + quoteChar) + quoteChar;
+    return quoteChar + replaceAll(str, quoteChar, '\\' + quoteChar) + quoteChar;
 }
 
 export default quote;

@@ -1,27 +1,15 @@
-import _template from 'lodash/template';
-
-const templateSettings = {
-    escape: false,
-    evaluate: false,
-    imports: false,
-    interpolate: /{{([\s\S]+?)}}/g,
-    variable: false
-};
-
-function compile(str) {
-    return _template(str, templateSettings);
-}
+import compile from './compile';
 
 /**
- * Interpolate values 
- * @alias string.template
- * @param {string} str
- * @param {object} values
- * @returns {string}
+ * Interpolate values
+ * @function string.template
+ * @param {String} str
+ * @param {Object} values
+ * @param {Object} [settings] - Template settings, {@link https://lodash.com/docs/4.17.15#template}
+ * @returns {String}
  */
-function template(str, values) {
-    return compile(str)(values);
+function template(str, values, settings) {
+    return compile(str, settings)(values);
 }
 
-template.compile = compile;
 export default template;

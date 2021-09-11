@@ -14,13 +14,15 @@ npm install @genx/july
 import { text, naming, url } from '@genx/july';
 
 //3.5x faster than String.replaceAll
-text.replaceAll("abcdabcd", "a", "b");
+text.replaceAll('abcdabcd', 'a', 'b');
 
-naming.pascalCase("agency-client"); //AgencyClient
+naming.pascalCase('agency-client'); //AgencyClient
 
 //https://www.some.com?key=value2&key2=value3
-url.appendQuery("https://www.some.com?key=value", { key: 'value2', 'key2': 'value3' });
-
+url.appendQuery('https://www.some.com?key=value', {
+    key: 'value2',
+    key2: 'value3',
+});
 ```
 
 ```js
@@ -75,7 +77,7 @@ import { _, eachAsync_, filterAsync_, findAsync_ } from '@genx/july';
 // _: lodash
 // eachAsync_: like _.each() with async function support
 // filterAsync_: like _.filter() with async function support
-// findAsync_: like _.find() with async function support 
+// findAsync_: like _.find() with async function support
 ```
 
 ## High Benchmark Guidelines

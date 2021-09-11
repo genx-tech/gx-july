@@ -1,9 +1,10 @@
 /**
  * Get a value by dot-separated path or key array from a collection
- *  different from lodash/get)
- * @param {object} collection - The collection
+ * Does not support '[i]', e.g. 'a[0].b.c' style accessor, use [ 'a',  0, 'b', 'c' ] instead, different from lodash/get
+ * @alias object.get
+ * @param {Object} collection - The collection
  * @param {string|array} keyPath - A dot-separated path (dsp) or a key array, e.g. settings.xxx.yyy, or ['setting', 'xxx', 'yyy']
- * @param {object} [defaultValue] - The default value if the path does not exist
+ * @param {Object} [defaultValue] - The default value if the path does not exist
  * @returns {*}
  */
 const _get = (collection, keyPath, defaultValue) => {
@@ -23,7 +24,9 @@ const _get = (collection, keyPath, defaultValue) => {
         collection = collection[nodes[index++]];
     }
 
-    return collection != null && index && index == length ? collection : (defaultValue ?? collection);
+    return collection != null && index && index == length
+        ? collection
+        : defaultValue ?? collection;
 };
 
 export default _get;

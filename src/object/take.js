@@ -3,7 +3,7 @@
  * @alias object.take
  * @param {Object} object
  * @param {integer} [n=1] - The number of k-v pair to take.
- * @returns {Object} 
+ * @returns {Object}
  */
 function take(object, n) {
     n == null && (n = 1);

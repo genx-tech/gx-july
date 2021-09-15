@@ -1,6 +1,8 @@
 import eachAsync_ from "../collection/eachAsync_";
 import filterAsync_ from "../collection/filterAsync_";
 import findAsync_ from "../collection/findAsync_";
+import findKeyAsync_ from "../collection/findKeyAsync_";
+import findKey from "../collection/findKey";
 import sleep_ from '../lang/sleep_';
 
 describe('collection', () => {
@@ -65,11 +67,42 @@ it('eachAsync_:object', async () => {
         r.should.be.exactly(30);
     });
 
+    it('findKeyAsync_:array', async () => {
+        const r = await findKeyAsync_(array, async (a) => {
+            await sleep_(50);
+            return a > 20;
+        });
+
+        r.should.be.exactly(2);
+    });
+
+
+    it('findKey:array', async () => {
+        const r = await findKey(array, (a) => a > 20);
+
+        r.should.be.exactly(2);
+    });
+
     it('findAsync_:object', async () => {
         const r = await findAsync_(obj, async (v,k) => {
             await sleep_(50);
             return k !== 'k3' && v > 200;
         });
+
+        r.should.be.exactly(400);
+    });
+
+    it('findKeyAsync_:object', async () => {
+        const r = await findKeyAsync_(obj, async (v,k) => {
+            await sleep_(50);
+            return k !== 'k3' && v > 200;
+        });
+
+        r.should.be.exactly('k4');
+    });
+
+    it('findKey:object', async () => {
+        const r = await findKey(obj, (v,k) =>  k !== 'k3' && v > 200);
 
         r.should.be.exactly('k4');
     });

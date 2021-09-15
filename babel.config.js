@@ -1,10 +1,11 @@
 //babel config for node.js app
-const targetLTSVersion = "14";
+const targetLTSVersion = '14';
 
-const isBabelRegister = (caller) => !!(caller && caller.name === "@babel/register");
+const isBabelRegister = (caller) =>
+    !!(caller && caller.name === '@babel/register');
 
 module.exports = function (api) {
-    const isProduction = api.env(["production"]);
+    const isProduction = api.env(['production']);
     const isRegister = api.caller(isBabelRegister);
 
     const targets = {
@@ -16,36 +17,36 @@ module.exports = function (api) {
     const plugins = [];
 
     if (isProduction) {
-        plugins.push("source-map-support");
+        plugins.push('source-map-support');
     }
 
     plugins.push(
         ...[
             [
-                "@babel/plugin-proposal-decorators",
+                '@babel/plugin-proposal-decorators',
                 {
                     decoratorsBeforeExport: true,
                 },
             ],
-            "@babel/plugin-proposal-class-properties",
+            '@babel/plugin-proposal-class-properties',
         ]
     );
 
     const opts = {
         ...(isRegister ? {} : targets),
-        sourceMaps: isProduction ? true : "inline",
+        sourceMaps: isProduction ? true : 'inline',
         presets: [
             [
-                "@babel/env",
+                '@babel/env',
                 {
                     ...targets,
                 },
             ],
         ],
         comments: false,
-        ignore: ["node_modules"],
+        ignore: ['node_modules'],
         plugins,
     };
-    
+
     return opts;
 };

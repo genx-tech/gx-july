@@ -5,6 +5,7 @@
  * @param {String} q - Sub-srting
  * @returns {boolean}
  */
-const isWrappedWith = (s, q) => s && q && (s.length > q.length && s.startsWith(q) && s.endsWith(q));
+const isWrappedWith = (s, q) =>
+    s && q && s.length > q.length && s.startsWith(q) && s.endsWith(q);
 
 export default isWrappedWith;

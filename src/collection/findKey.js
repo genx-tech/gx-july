@@ -5,12 +5,11 @@ import isPlainObject from '../object/isPlainObject';
  * The returned value is undefined if not found.
  * That's different from the _.find() function in lodash.
  * @alias collection.findKey
- * @async
  * @param {Array|Object} obj
  * @param {iterator} predicate
  * @returns {Promise.<Object|undefined>}
  */
-async function findKey(obj, predicate) {
+function findKey(obj, predicate) {
     if (Array.isArray(obj)) {
         let l = obj.length;
         for (let i = 0; i < l; i++) {
@@ -32,8 +31,8 @@ async function findKey(obj, predicate) {
         }
 
         return undefined;
-    } 
-    
+    }
+
     throw new Error('The first argument should be a collection.');
 }
 

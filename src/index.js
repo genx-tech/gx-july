@@ -38,7 +38,7 @@ export { default as objectToArray } from './object/objectToArray';
  * @namespace collection
  */
 
- export { default as findKey } from './collection/findKey';
+export { default as findKey } from './collection/findKey';
 export { default as eachAsync_ } from './collection/eachAsync_';
 export { default as findKeyAsync_ } from './collection/findKeyAsync_';
 export { default as findAsync_ } from './collection/findAsync_';

@@ -78,7 +78,7 @@ it('eachAsync_:object', async () => {
 
 
     it('findKey:array', async () => {
-        const r = await findKey(array, (a) => a > 20);
+        const r = findKey(array, (a) => a > 20);
 
         r.should.be.exactly(2);
     });
@@ -102,7 +102,7 @@ it('eachAsync_:object', async () => {
     });
 
     it('findKey:object', async () => {
-        const r = await findKey(obj, (v,k) =>  k !== 'k3' && v > 200);
+        const r = findKey(obj, (v,k) =>  k !== 'k3' && v > 200);
 
         r.should.be.exactly('k4');
     });

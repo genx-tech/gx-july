@@ -526,7 +526,7 @@ The predicate is invoked asynchronously with three arguments: (value, index|key,
             
 <hr>
 <dt>
-    <h4 class="name" id=".findAsync_"><span class="type-signature">&lt;async, static> </span>findAsync_(obj, asyncPredicate)</h4>
+    <h4 class="name" id=".findAsync_"><span class="type-signature">&lt;async, static> </span>findAsync_(obj, asyncPredicate_)</h4>
     
     
 </dt>
@@ -535,7 +535,7 @@ The predicate is invoked asynchronously with three arguments: (value, index|key,
     
     <div class="description">
         <p>Iterate a collection asynchronously until predicate returns true<br>
-The returned value is the key of found item if the given collection is an object.<br>
+The returned value is undefined if not found.<br>
 That's different from the _.find() function in lodash.</p>
     </div>
     
@@ -598,7 +598,7 @@ That's different from the _.find() function in lodash.</p>
 
         <tr>
             
-                <td class="name"><code>asyncPredicate</code></td>
+                <td class="name"><code>asyncPredicate_</code></td>
             
 
             <td class="type">
@@ -658,6 +658,370 @@ That's different from the _.find() function in lodash.</p>
 	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
 	<dd class="tag-source">
 		collection/findAsync_.js
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Object|undefined)></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".findKey"><span class="type-signature">&lt;static> </span>findKey(obj, predicate)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Iterate a collection until predicate returns true<br>
+The returned value is undefined if not found.<br>
+That's different from the _.find() function in lodash.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+|
+
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>predicate</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">iterator</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		collection/findKey.js
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Object|undefined)></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".findKeyAsync_"><span class="type-signature">&lt;async, static> </span>findKeyAsync_(obj, asyncPredicate_)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Iterate a collection asynchronously until predicate returns true<br>
+The returned value is undefined if not found.<br>
+That's different from the _.find() function in lodash.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+|
+
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>asyncPredicate_</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">asyncIterator</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		collection/findKeyAsync_.js
 	</dd>
 	
 

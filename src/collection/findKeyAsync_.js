@@ -32,9 +32,9 @@ async function findKeyAsync_(obj, asyncPredicate_) {
         }
 
         return undefined;
-    } 
-        
-    return Promise.reject('The first argument should be a collection.');    
+    }
+
+    return Promise.reject('The first argument should be a collection.');
 }
 
 export default findKeyAsync_;

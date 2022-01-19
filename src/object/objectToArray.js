@@ -9,8 +9,8 @@ import _map from 'lodash/map';
  * @returns {array}
  */
 const objectToArray = (object, keyNaming, valueNaming) => {
-    keyNaming ??= 'name';
-    valueNaming ??= 'value';
+    keyNaming ?? (keyNaming = 'name');
+    valueNaming ?? (valueNaming = 'value');
 
     return _map(object, (v, k) => ({ [keyNaming]: k, [valueNaming]: v }));
 };

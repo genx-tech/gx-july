@@ -24,7 +24,7 @@ const _get = (collection, keyPath, defaultValue) => {
         collection = collection[nodes[index++]];
     }
 
-    return collection != null && index && index == length
+    return collection != null && index && index === length
         ? collection
         : defaultValue ?? collection;
 };

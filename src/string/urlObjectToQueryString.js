@@ -9,10 +9,11 @@ function objectToQueryString(obj) {
 
     for (let k in obj) {
         const v = obj[k];
-        const part =
-            v == null
-                ? encodeURIComponent(k)
-                : `${encodeURIComponent(k)}=${encodeURIComponent(v)}`;
+        let part = encodeURIComponent(k);
+        if (v != null) {
+            part += '=' + encodeURIComponent(v);
+        }
+
         parts.push(part);
     }
 

@@ -6,6 +6,6 @@
  * @returns {String}
  */
 const dropIfEndsWith = (str, ending) =>
-    str.endsWith(ending) ? str.substr(0, str.length - ending.length) : str;
+    str && str.endsWith(ending) ? str.substring(0, str.length - ending.length) : str;
 
 export default dropIfEndsWith;

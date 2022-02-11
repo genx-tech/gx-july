@@ -9,7 +9,9 @@ import queryStringToObject from './urlQueryStringToObject';
  * @returns {String}
  */
 function appendQuery(url, query) {
-    if (!query) return url;
+    if (!query) {
+        return url;
+    }
 
     const posQM = url.indexOf('?');
 
@@ -23,8 +25,7 @@ function appendQuery(url, query) {
 
     const [base, qs] = url.split('?', 2);
     const previousObj = queryStringToObject(qs);
-    const newObj =
-        typeof query === 'string' ? queryStringToObject(query) : query;
+    const newObj = typeof query === 'string' ? queryStringToObject(query) : query;
 
     const newQs = objectToQueryString({ ...previousObj, ...newObj });
 

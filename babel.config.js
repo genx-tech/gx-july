@@ -1,8 +1,7 @@
 //babel config for node.js app
 const targetLTSVersion = '14';
 
-const isBabelRegister = (caller) =>
-    !!(caller && caller.name === '@babel/register');
+const isBabelRegister = (caller) => !!(caller && caller.name === '@babel/register');
 
 module.exports = function (api) {
     const isProduction = api.env(['production']);
@@ -20,17 +19,7 @@ module.exports = function (api) {
         plugins.push('source-map-support');
     }
 
-    plugins.push(
-        ...[
-            [
-                '@babel/plugin-proposal-decorators',
-                {
-                    decoratorsBeforeExport: true,
-                },
-            ],
-            '@babel/plugin-proposal-class-properties',
-        ]
-    );
+    plugins.push(...['@babel/plugin-proposal-class-properties', 'add-module-exports']);
 
     const opts = {
         ...(isRegister ? {} : targets),

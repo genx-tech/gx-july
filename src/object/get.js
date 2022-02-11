@@ -11,7 +11,7 @@ const _get = (collection, keyPath, defaultValue) => {
     if (keyPath == null) {
         return collection ?? defaultValue;
     }
-    let nodes = Array.isArray(keyPath) ? keyPath : keyPath.split('.');
+    let nodes = Array.isArray(keyPath) ? keyPath : typeof keyPath === 'string' ? keyPath.split('.') : [keyPath];
 
     if (collection == null) {
         return defaultValue ?? collection;
@@ -24,9 +24,7 @@ const _get = (collection, keyPath, defaultValue) => {
         collection = collection[nodes[index++]];
     }
 
-    return collection != null && index && index === length
-        ? collection
-        : defaultValue ?? collection;
+    return collection != null && index && index === length ? collection : defaultValue ?? collection;
 };
 
 export default _get;

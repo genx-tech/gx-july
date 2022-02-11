@@ -5,7 +5,6 @@
  * @param {String} starting
  * @returns {String}
  */
-const ensureStartsWith = (str, starting) =>
-    str.startsWith(starting) ? str : starting + str;
+const ensureStartsWith = (str, starting) => (str ? (str.startsWith(starting) ? str : starting + str) : starting);
 
 export default ensureStartsWith;

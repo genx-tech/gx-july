@@ -40,12 +40,7 @@ function _diff(base, object, creator, setter) {
                             setter(re, k, v);
                         } else {
                             // both not empty
-                            const vd = _diff(
-                                vb,
-                                v,
-                                objectOperators[0],
-                                objectOperators[1]
-                            );
+                            const vd = _diff(vb, v, objectOperators[0], objectOperators[1]);
                             if (!_isEmpty(vd)) {
                                 setter(re, k, vd);
                             }

@@ -7,8 +7,7 @@
  * @returns {Object}
  */
 const arrayToObject = (arrayOfObjects, keyGetter, valueGetter) => {
-    const _keyGetter =
-        typeof keyGetter === 'function' ? keyGetter : (obj) => obj[keyGetter];
+    const _keyGetter = typeof keyGetter === 'function' ? keyGetter : (obj) => obj[keyGetter];
 
     const _valueGetter =
         valueGetter == null

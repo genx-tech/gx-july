@@ -21,14 +21,10 @@ function pushIntoBucket(collection, key, value, flattenArray) {
             bucket.push(value);
         }
     } else if (bucket == null) {
-        bucket =
-            Array.isArray(value) && flattenArray ? value.concat() : [value];
+        bucket = Array.isArray(value) && flattenArray ? value.concat() : [value];
         _set(collection, key, bucket);
     } else {
-        bucket =
-            Array.isArray(value) && flattenArray
-                ? [bucket, ...value]
-                : [bucket, value];
+        bucket = Array.isArray(value) && flattenArray ? [bucket, ...value] : [bucket, value];
         _set(collection, key, bucket);
     }
 

@@ -12,18 +12,11 @@ const hookInvoke = (obj, onCalling, onCalled) =>
             const origMethod = target[propKey];
             if (typeof origMethod === 'function') {
                 return function (...args) {
-                    onCalling &&
-                        Promise.resolve(
-                            onCalling(obj, { name: propKey, args })
-                        );
+                    onCalling && Promise.resolve(onCalling(obj, { name: propKey, args }));
                     let returned = origMethod.apply(target, args);
                     onCalled &&
                         Promise.resolve(returned)
-                            .then((returned) =>
-                                Promise.resolve(
-                                    onCalled(obj, { name: propKey, returned })
-                                )
-                            )
+                            .then((returned) => Promise.resolve(onCalled(obj, { name: propKey, returned })))
                             .catch();
                     return returned;
                 };

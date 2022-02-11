@@ -5,10 +5,8 @@
  * @param {*} separator
  * @returns {Array} The newly inserted array
  */
-const insertSep = (lastIndex, separator) => (e, i) =>
-    i < lastIndex ? [e, separator] : [e];
-const insertSepFunctor = (lastIndex, separator) => (e, i) =>
-    i < lastIndex ? [e, separator(i)] : [e];
+const insertSep = (lastIndex, separator) => (e, i) => i < lastIndex ? [e, separator] : [e];
+const insertSepFunctor = (lastIndex, separator) => (e, i) => i < lastIndex ? [e, separator(i)] : [e];
 
 const insertBetween = (arr, separator) =>
     (typeof separator === 'function'

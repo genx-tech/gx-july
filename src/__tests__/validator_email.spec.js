@@ -1,4 +1,4 @@
-import isEmail from '../validators/email';
+import isEmail from '../validators/isEmail';
 
 const cases = [
     [ 'abc@email.com', true ],

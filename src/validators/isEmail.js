@@ -9,7 +9,7 @@ const BASIC_PATTERN = /^\S+@\S+\.\S+$/;
  * @param {boolean} [precise=false]
  * @returns {boolean}
  */
-const validateEmail = (value, precise) => {
+const isEmail = (value, precise) => {
     const pattern = precise ? PRECISE_PATTERN : BASIC_PATTERN;
 
     if (typeof value !== 'string') {
@@ -23,4 +23,4 @@ const validateEmail = (value, precise) => {
     return true;
 };
 
-export default validateEmail;
+export default isEmail;

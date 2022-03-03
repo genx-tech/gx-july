@@ -31,9 +31,13 @@ export * from './collection';
 /**
  * @namespace string
  */
- export * from './string';
+export * from './string';
 
 /**
  * @namespace validator
  */
 export * from './validators';
+
+export * as text from './string/text';
+export * as url from './string/url';
+export * as naming from './string/naming';

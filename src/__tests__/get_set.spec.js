@@ -1,3 +1,4 @@
+import should from 'should';
 import get from '../object/get';
 import set from '../object/set';
 
@@ -17,7 +18,7 @@ describe('get_set', () => {
         };
 
         should.not.exist(get(null));
-        get(null, null, 'default').should.be.exactly('default');
+        should.not.exist(get(null, null, 'default'));
         get(obj, 'key5.key1', 'default').should.be.exactly('default');
 
         get(obj, 'key5').should.be.eql({

@@ -9,7 +9,7 @@
  */
 const _get = (collection, keyPath, defaultValue) => {
     if (keyPath == null) {
-        return collection ?? defaultValue;
+        return collection ?? undefined;
     }
     let nodes = Array.isArray(keyPath) ? keyPath : typeof keyPath === 'string' ? keyPath.split('.') : [keyPath];
 
@@ -24,7 +24,7 @@ const _get = (collection, keyPath, defaultValue) => {
         collection = collection[nodes[index++]];
     }
 
-    return collection != null && index && index === length ? collection : defaultValue ?? collection;
+    return typeof collection !== 'undefined' && index && index === length ? collection : defaultValue;
 };
 
 export default _get;

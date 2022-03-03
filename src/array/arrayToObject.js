@@ -16,8 +16,8 @@ const arrayToObject = (arrayOfObjects, keyGetter, valueGetter) => {
             ? valueGetter
             : (obj) => obj[valueGetter];
 
-    return arrayOfObjects.reduce((table, obj) => {
-        table[_keyGetter(obj)] = _valueGetter(obj);
+    return arrayOfObjects.reduce((table, obj, index) => {
+        table[_keyGetter(obj, index)] = _valueGetter(obj, index);
         return table;
     }, {});
 };

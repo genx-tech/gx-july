@@ -1,29 +1,32 @@
 import isPlainObject from './isPlainObject';
-import _each from 'lodash/each'; 
+import _each from 'lodash/each';
 import isInteger, { RANGE_INDEX } from '../validators/isInteger';
 
-const addEntry = (obj, key, value, numberAsArrayIndex) => {
+export const addEntry = (obj, key, value, numberAsArrayIndex) => {
     if (numberAsArrayIndex && isInteger(key, { range: RANGE_INDEX })) {
         if (Array.isArray(obj)) {
-            const index = parseInt(key);
+            const index = parseInt(key, 10);
 
             if (obj.length <= index) {
-                const numToFill = index-obj.length;
+                const numToFill = index - obj.length;
                 if (numToFill > 0) {
                     for (let i = 0; i < numToFill; i++) {
                         obj.push(undefined);
-                    } 
-                }                
+                    }
+                }
 
                 obj.push(value);
-                return value;
-            } 
+            } else {
+                obj[index] = value;
+            }
+
+            return value;
         }
     }
 
     obj[key] = value;
     return value;
-}
+};
 
 /**
  * Set a value by dot-separated path or key array into a collection
@@ -71,10 +74,10 @@ const _set = (collection, keyPath, value, options) => {
 
                 if (options.numberAsArrayIndex && isInteger(nextKey, { range: RANGE_INDEX })) {
                     next = addEntry(nested, key, [], options.numberAsArrayIndex);
-                } else  {
+                } else {
                     next = addEntry(nested, key, {}, options.numberAsArrayIndex);
                 }
-            } 
+            }
 
             nested = next;
         }

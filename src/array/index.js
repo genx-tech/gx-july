@@ -31,3 +31,10 @@ export const copyArrayLike = (arrayLike) => {
         return [...arrayLike];
     }
 };
+export const uniqPush = (arrayLike, value) => {
+    if (!arrayLike.includes(value)) {
+        return [...arrayLike, value];
+    }
+
+    return arrayLike;
+};

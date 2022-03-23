@@ -2,6 +2,7 @@ import should from 'should';
 import get from '../object/get';
 import set from '../object/set';
 import cowSet from '../object/cowSet';
+import { observable, toJS } from 'mobx';
 
 describe('get_set', () => {
     it('get', () => {
@@ -207,4 +208,83 @@ describe('get_set', () => {
             ],
         });
     });
+
+    it('special case 1', () => {
+        const obj = observable({
+            "id": "DMqk7ZckSqKi67MrNuutWA-202",
+            "category": "FLOOR_PLAN",
+            "name": "三房58坪",
+            "desc": null,
+            "createdAt": "2022-03-17T21:36:26.000Z",
+            "listing": "DMqk7ZckSqKi67MrNuutWA-199",
+            ":attributes": {
+              "BEDS": {
+                "id": 21,
+                "text": null,
+                "intValue": 3,
+                "numValue": null,
+                "object": null,
+                "flag": null,
+                "timestamp": null,
+                "createdAt": "2022-03-17T21:36:26.000Z",
+                "option": "DMqk7ZckSqKi67MrNuutWA-202",
+                "type": "BEDS"
+              },
+              "TSIZE": {
+                "id": 22,
+                "text": null,
+                "intValue": null,
+                "numValue": 58,
+                "object": null,
+                "flag": null,
+                "timestamp": null,
+                "createdAt": "2022-03-17T21:36:26.000Z",
+                "option": "DMqk7ZckSqKi67MrNuutWA-202",
+                "type": "TSIZE"
+              }
+            }
+          });
+
+          set(obj, [':attributes', 'LIVING', 'node1', 'node2'], 1);
+
+          toJS(obj).should.be.eql({
+            "id": "DMqk7ZckSqKi67MrNuutWA-202",
+            "category": "FLOOR_PLAN",
+            "name": "三房58坪",
+            "desc": null,
+            "createdAt": "2022-03-17T21:36:26.000Z",
+            "listing": "DMqk7ZckSqKi67MrNuutWA-199",
+            ":attributes": {
+              "BEDS": {
+                "id": 21,
+                "text": null,
+                "intValue": 3,
+                "numValue": null,
+                "object": null,
+                "flag": null,
+                "timestamp": null,
+                "createdAt": "2022-03-17T21:36:26.000Z",
+                "option": "DMqk7ZckSqKi67MrNuutWA-202",
+                "type": "BEDS"
+              },
+              "TSIZE": {
+                "id": 22,
+                "text": null,
+                "intValue": null,
+                "numValue": 58,
+                "object": null,
+                "flag": null,
+                "timestamp": null,
+                "createdAt": "2022-03-17T21:36:26.000Z",
+                "option": "DMqk7ZckSqKi67MrNuutWA-202",
+                "type": "TSIZE"
+              },
+              "LIVING": {
+                "node1": {
+                  "node2": 1
+                }
+              }
+            }
+          })
+    })
 });

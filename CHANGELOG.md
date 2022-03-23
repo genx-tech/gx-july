@@ -10,3 +10,9 @@
 
 -   Added uniqPush
 -   Added cowSet for copy-on-write deep setting
+
+## 1.0.4
+
+-   Fixed set failure when the target object is an observable mobx object
+-   Added cowSet export
+-   Added toPath and makePath util

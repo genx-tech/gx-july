@@ -43,7 +43,7 @@ function cowSet(collection, keyPath, value, options) {
             } else {
                 nested[key] = _clone(next);
                 nested = nested[key];
-            }            
+            }
         }
 
         const lastKey = nodes[lastIndex];

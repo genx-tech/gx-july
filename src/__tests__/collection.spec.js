@@ -4,6 +4,7 @@ import findAsync_ from "../collection/findAsync_";
 import findKeyAsync_ from "../collection/findKeyAsync_";
 import findKey from "../collection/findKey";
 import sleep_ from '../lang/sleep_';
+import { toPath, makePath } from '../object';
 
 describe('collection', () => {
    const array = [ 10, 20, 30, 40 ];
@@ -105,5 +106,27 @@ it('eachAsync_:object', async () => {
         const r = findKey(obj, (v,k) =>  k !== 'k3' && v > 200);
 
         r.should.be.exactly('k4');
+    });
+
+    it('to path', () => {
+        let a = toPath('a.b.10.d');
+        a.should.be.eql(['a', 'b', '10', 'd' ]);
+
+        a = toPath(null);
+        a.should.be.eql([]);
+
+        a = toPath([ 'a', 'b', 'c' ]);
+        a.should.be.eql([ 'a', 'b', 'c' ]);
+    });
+
+    it('make path', () => {
+        let a = makePath(20, 'a.b.10.d');
+        a.should.be.eql([20, 'a', 'b', '10', 'd' ]);
+
+        a = makePath(null, ['a', 'b', 'c']);
+        a.should.be.eql(['a', 'b', 'c']);
+
+        a = makePath([ 'a', 'b', 'c' ], ['d']);
+        a.should.be.eql([ 'a', 'b', 'c', 'd' ]);
     });
 });

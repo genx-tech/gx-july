@@ -1,6 +1,6 @@
 {
     "name": "@genx/july",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "description": "Gen-X JavaScript Utility Library for both Node.js and browser",
     "main": "lib/commonjs/index",
     "module": "lib/module/index",

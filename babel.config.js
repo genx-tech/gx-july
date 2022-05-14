@@ -1,5 +1,5 @@
 //babel config for node.js app
-const targetLTSVersion = '14';
+const targetLTSVersion = '16';
 
 const isBabelRegister = (caller) => !!(caller && caller.name === '@babel/register');
 

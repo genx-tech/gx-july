@@ -1,4 +1,5 @@
 import _map from 'lodash/map';
+import _get from './get';
 
 /**
  * Convert a k-v paired object into an array pair-by-pair.
@@ -8,11 +9,11 @@ import _map from 'lodash/map';
  * @param {*} valueNaming
  * @returns {array}
  */
-const objectToArray = (object, keyNaming, valueNaming) => {
+const objectToArray = (object, keyNaming, valueNaming, valuePath) => {
     keyNaming ?? (keyNaming = 'name');
     valueNaming ?? (valueNaming = 'value');
 
-    return _map(object, (v, k) => ({ [keyNaming]: k, [valueNaming]: v }));
+    return _map(object, (v, k) => ({ [keyNaming]: k, [valueNaming]: valuePath ? _get(v, valuePath) : v }));
 };
 
 export default objectToArray;

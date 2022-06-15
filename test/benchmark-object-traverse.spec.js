@@ -4,7 +4,6 @@ const testSuite = require("@genx/test");
 const _ = require('lodash');
 
 testSuite(
-    __filename,
     function (suite) {      
         suite.testCase("lodash each vs object.entries.forEach", async function () {
             const testees = {

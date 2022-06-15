@@ -27,7 +27,6 @@ const takeByFor = (object, n) => {
 }
 
 testSuite(
-    __filename,
     function (suite) {      
         suite.testCase("take by _.pick vs take by for...in", async function () {
             const testees = {

@@ -5,7 +5,6 @@ const { zipAndFlat } = require("..");
 const _ = require('lodash');
 
 testSuite(
-    __filename,
     function (suite) {      
         suite.testCase("zip and flat", async function () {
             const testees = {

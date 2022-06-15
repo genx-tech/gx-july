@@ -5,7 +5,6 @@ const _ = require('lodash');
 const fastDeepEqual = require('fast-deep-equal');
 
 testSuite(
-    __filename,
     function (suite) {
         suite.testCase(
             'lodash isEqual vs fast-deep-equal',

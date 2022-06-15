@@ -16,3 +16,11 @@
 -   Fixed set failure when the target object is an observable mobx object
 -   Added cowSet export
 -   Added toPath and makePath util
+
+## 1.0.5
+
+-   Added debug helper dbgGetCallerFile
+
+## 1.1.0
+
+-   Added super fast csv parser and writer

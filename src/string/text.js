@@ -26,3 +26,5 @@ export { default as dropIfEndsWith } from './dropIfEndsWith';
 export { default as dropIfStartsWith } from './dropIfStartsWith';
 export { default as ensureEndsWith } from './ensureEndsWith';
 export { default as ensureStartsWith } from './ensureStartsWith';
+export { default as simpleCsvParser } from './simpleCsvParser';
+export { default as trimRight } from './trimRight';

@@ -6,7 +6,7 @@ import ensureStartsWith from './ensureStartsWith';
  * @function string.urlJoin
  * @param {String} base
  * @param {String} extraPath
- * @param  {...any} more - More path
+ * @param {...any} more - More path
  * @returns {String}
  */
 function join(base, extraPath, ...more) {

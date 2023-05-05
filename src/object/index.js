@@ -9,10 +9,8 @@ export { default as cowSet } from './cowSet';
 export { default as objectToArray } from './objectToArray';
 export { default as flattenObject } from './flattenObject';
 export { default as unflattenObject } from './unflattenObject';
+export { default as filterNull } from './filterNull';
+export { default as xNull } from './filterNull';
+export { default as defaultDeep } from './defaultDeep';
 
-export const toPath = (p, keyPathSeparator = '.') =>
-    p == null ? [] : typeof p === 'string' ? p.split(keyPathSeparator) : Array.isArray(p) ? p : [p];
-export const makePath = (part1, part2, keyPathSeparator = '.') => [
-    ...toPath(part1, keyPathSeparator),
-    ...toPath(part2, keyPathSeparator),
-];
+export * from './pathUtils';

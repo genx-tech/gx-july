@@ -1,1 +1,1 @@
-{"version":3,"sources":["index.js"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;AAAA;;AACA","sourcesContent":["export { default as isEmail } from './isEmail';\nexport { default as isInteger } from './isInteger';\n/**\n * @deprecated for back-ward compatability\n */\nexport { default as validateEmail } from './isEmail';\n"]}
+{"version":3,"sources":["index.js"],"names":[],"mappings":";;;;;;;;;;;;AAAA","sourcesContent":["export { default as isInteger } from './isInteger';\n"]}

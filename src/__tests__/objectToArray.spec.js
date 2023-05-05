@@ -59,4 +59,9 @@ describe('objectToArray', () => {
         r1.should.be.eql(a4);
         
     });
+
+    it('objectToArray element builder', () => {        
+        const r1 = objectToArray(obj, (v, k) => ({name: k, val: v}));
+        r1.should.be.eql(a4);        
+    });
 });

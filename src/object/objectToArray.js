@@ -10,6 +10,15 @@ import _get from './get';
  * @returns {array}
  */
 const objectToArray = (object, keyNaming, valueNaming, valuePath) => {
+    // (object, elementBuilder)
+    if (typeof keyNaming === 'function') {
+        if (valueNaming != null || valuePath != null) {
+            throw new Error('Invalid argument!');
+        }
+
+        return _map(object, keyNaming /* elementBuilder(v, k) => array element */);
+    }
+
     keyNaming ?? (keyNaming = 'name');
     valueNaming ?? (valueNaming = 'value');
 

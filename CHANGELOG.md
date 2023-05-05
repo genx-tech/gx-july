@@ -24,3 +24,7 @@
 ## 1.1.0
 
 -   Added super fast csv parser and writer
+
+## 1.2.1
+
+-   Add batch async with promise all

@@ -1,1 +1,1 @@
-{"version":3,"sources":["index.js"],"names":["default","isInteger"],"mappings":"AAAA,SAASA,OAAO,IAAIC,SAApB,QAAqC,aAArC","sourcesContent":["export { default as isInteger } from './isInteger';\n"]}
+{"version":3,"names":["default","isInteger"],"sources":["index.js"],"sourcesContent":["export { default as isInteger } from './isInteger';\n"],"mappings":"AAAA,SAASA,OAAO,IAAIC,SAAS,QAAQ,aAAa"}

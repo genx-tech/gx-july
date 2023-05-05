@@ -1,1 +1,1 @@
-{"version":3,"sources":["index.js"],"names":[],"mappings":";;;;;;;;;;;;AAAA","sourcesContent":["export { default as isInteger } from './isInteger';\n"]}
+{"version":3,"names":["_isInteger","_interopRequireDefault","require","obj","__esModule","default"],"sources":["index.js"],"sourcesContent":["export { default as isInteger } from './isInteger';\n"],"mappings":";;;;;;;;;;;AAAA,IAAAA,UAAA,GAAAC,sBAAA,CAAAC,OAAA;AAAmD,SAAAD,uBAAAE,GAAA,WAAAA,GAAA,IAAAA,GAAA,CAAAC,UAAA,GAAAD,GAAA,KAAAE,OAAA,EAAAF,GAAA"}

@@ -12,16 +12,17 @@
         "doc": "jsdoc -c jsdoc.json -t ./node_modules/ink-docstrap/template -R README.md -d './docs' -r --verbose ./src",
         "test": "mocha --recursive src/**/*.spec.js",
         "cover": "nyc --reporter=html --reporter=text mocha --recursive src/**/*.spec.js",
-        "test:clean": "rm -rf allure-results",
-        "test:spec": "npm run test:clean && mocha --reporter mocha-multi --reporter-options mocha-multi=test/mocha-multi-reporters.json test/*.spec.js",
-        "cover:spec": "npm run test:clean && COVER_MODE=1 NODE_RT=babel nyc --reporter=html --reporter=text -- mocha --reporter progress test/*.spec.js && open ./coverage/index.html",
+        "test:clean": "shx rm -rf allure-results",
+        "test:spec": "pnpm test:clean && mocha --reporter mocha-multi --reporter-options mocha-multi=test/mocha-multi-reporters.json test/*.spec.js",
+        "cover:spec": "pnpm test:clean && COVER_MODE=1 NODE_RT=babel nyc --reporter=html --reporter=text -- mocha --reporter progress test/*.spec.js && open ./coverage/index.html",
         "report": "allure generate allure-results --clean -o allure-report && allure open allure-report",
         "prettier": "prettier --write .",
+        "commitlint": "commitlint --edit \"$1\"",
         "lint": "eslint \"**/*.js\"",
-        "clean": "del lib",
+        "clean": "shx rm -rf lib",
         "build": "bob build",
         "release": "release-it",
-        "prepare": "npm run clean && npm run build"
+        "prepare": "husky install"
     },
     "keywords": [
         "javascript",
@@ -50,27 +51,20 @@
         "babel-plugin-source-map-support": "^2.1.3",
         "commitlint": "^11.0.0",
         "csv-parse": "^5.0.4",
-        "del-cli": "^4.0.1",
         "eslint": "^7.2.0",
         "eslint-config-prettier": "^7.0.0",
         "eslint-plugin-prettier": "^3.1.3",
-        "husky": "^4.2.5",
+        "husky": "^8.0.3",
         "ink-docstrap": "^1.3.2",
         "jsdoc": "^3.6.7",
-        "mobx": "^6.5.0",
         "mocha": "^9.1.1",
         "nyc": "^15.1.0",
         "prettier": "^2.0.5",
         "react-native-builder-bob": "^0.18.1",
-        "release-it": "^14.2.2",
+        "release-it": "^15.10.3",
         "should": "^13.2.3",
+        "shx": "0.3.4",
         "source-map-support": "^0.5.19"
-    },
-    "husky": {
-        "hooks": {
-            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-            "pre-commit": "npm run lint"
-        }
     },
     "commitlint": {
         "extends": [
